@@ -39,8 +39,7 @@ public class AssessmentController {
     @Operation(summary = "Generate patient record", description = "Generates a record for the patient with the given ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Record generated successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = RecordDto.class))),
-            @ApiResponse(responseCode = "404", description = "Patient not found", content = @Content),
-            @ApiResponse(responseCode = "500", description = "Internal server error", content = @Content)
+            @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     public ResponseEntity<RecordDto> generateRecord(@PathVariable int patientId) {
 

@@ -40,8 +40,7 @@ public class AssessmentCurlController {
     @Operation(summary = "Assess patient by ID", description = "Calculates diabetes risk level for a patient with the given ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Assessment completed successfully", content = @Content(mediaType = "text/plain")),
-            @ApiResponse(responseCode = "404", description = "Patient not found", content = @Content(mediaType = "text/plain")),
-            @ApiResponse(responseCode = "500", description = "Internal server error", content = @Content(mediaType = "text/plain"))
+            @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     public ResponseEntity<String> assessPatientById(@RequestParam int patId) {
 
@@ -69,9 +68,8 @@ public class AssessmentCurlController {
     @Operation(summary = "Assess patient by family name", description = "Assesses the risk of diabetes for a patient by their family name.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Assessment successful",
-                    content = @Content(mediaType = "text/plain", schema = @Schema(type = "string"))),
-            @ApiResponse(responseCode = "404", description = "Patient not found",
-                    content = @Content(mediaType = "text/plain", schema = @Schema(type = "string")))
+                    content = @Content(mediaType = "text/plain")),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     public ResponseEntity<String> assessPatientByFamilyName(@RequestParam String familyName) {
 
